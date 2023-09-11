@@ -88,5 +88,5 @@ st.plotly_chart(fig)
 
 st.markdown("----")
 st.subheader("Scatter plot")
-fig = px.scatter(data_frame=tips_data, x="total_bill",y="tips")
+fig = px.scatter(data_frame=tips_data, x="total_bill", y="tip")
 st.plotly_chart(fig)
