@@ -1,6 +1,14 @@
 import streamlit as st
 import pandas as pd
+import numpy as np
 import os
+
+hide_github_icon = """
+#GithubIcon {
+  visibility: hidden;
+}
+"""
+st.markdown(hide_github_icon, unsafe_allow_html=True)
 
 st.header("This is my widgets page :umbrella_with_rain_drops:")
 button1 = st.button("This is my button ")
@@ -56,3 +64,7 @@ if save_button:
             st.success("Your File is upload ok")
     else:
         st.error("Please select a file to upload")
+
+st.header("First Interactive Plots")
+my_data = pd.DataFrame(np.random.randint(low=1, high=25, size=(6, 4)), columns=["a","b","c","d"])
+st.write(my_data)
