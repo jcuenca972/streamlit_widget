@@ -2,19 +2,16 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import os
+import plotly.express as px
 
-st.markdown(
-    """
-    <style>
-    .css-1jc7ptx, .e1ewe7hr3, .viewerBadge_container__1QSob,
-    .styles_viewerBadge__1yB5_, .viewerBadge_link__1S137,
-    .viewerBadge_text__1JaDK {
-        display: none;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
+hide_streamlit_style = """
+<style>
+#MainMenu {visibility: hidden;}
+footer {visibility: hidden;}
+</style>
+
+"""
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
 st.header("This is my widgets page :umbrella_with_rain_drops:")
 button1 = st.button("This is my button ")
@@ -78,3 +75,8 @@ st.write(my_data)
 st.bar_chart(my_data)
 st.line_chart(my_data)
 st.area_chart(my_data)
+
+st.markdown("----")
+st.header("Load a real dataframe")
+tips_data = pd.read_csv("./data/tips.csv")
+
