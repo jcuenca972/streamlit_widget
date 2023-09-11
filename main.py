@@ -68,6 +68,12 @@ if save_button:
     else:
         st.error("Please select a file to upload")
 
+folder_path = '/path/to/folder'
+files = [f for f in os.listdir(folder_path) if os.path.isfile(os.path.join(folder_path, f))]
+st.subheader("Files:")
+for file in files:
+    st.write(file)
+
 st.header("First Interactive Plots")
 my_data = pd.DataFrame(np.random.randint(low=1, high=25, size=(6, 4)), columns=["a","b","c","d"])
 st.write(my_data)
