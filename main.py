@@ -92,3 +92,9 @@ my_selection2 = st.selectbox("Select the category to color on scatter", ("sex", 
 st.write(my_selection2)
 fig = px.scatter(data_frame=tips_data, x="total_bill", y="tip", color=my_selection2)
 st.plotly_chart(fig)
+
+st.markdown("----")
+st.subheader("My last plot")
+path = st.multiselect("Features to plot", ("sex", "smoker", "day", "time"))
+fig = px.sunburst(data_frame=tips_data, path=path)
+st.plotly_chart(fig)
