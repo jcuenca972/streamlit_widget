@@ -3,12 +3,18 @@ import pandas as pd
 import numpy as np
 import os
 
-hide_github_icon = """
-#GithubIcon {
-  visibility: hidden;
-}
-"""
-st.markdown(hide_github_icon, unsafe_allow_html=True)
+st.markdown(
+    """
+    <style>
+    .css-1jc7ptx, .e1ewe7hr3, .viewerBadge_container__1QSob,
+    .styles_viewerBadge__1yB5_, .viewerBadge_link__1S137,
+    .viewerBadge_text__1JaDK {
+        display: none;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
 st.header("This is my widgets page :umbrella_with_rain_drops:")
 button1 = st.button("This is my button ")
@@ -68,3 +74,7 @@ if save_button:
 st.header("First Interactive Plots")
 my_data = pd.DataFrame(np.random.randint(low=1, high=25, size=(6, 4)), columns=["a","b","c","d"])
 st.write(my_data)
+
+st.bar_chart(my_data)
+st.line_chart(my_data)
+st.area_chart(my_data)
