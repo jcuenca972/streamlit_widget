@@ -82,5 +82,5 @@ tips_data = pd.read_csv("./data/tips.csv")
 st.header("Distribution Chart")
 
 my_selection = st.selectbox("Select the category to color",("sex","smoker","day","time"))
-fig = px.histogram(data_frame=tips_data, x="total_bill",color="my_selection")
+fig = px.histogram(data_frame=tips_data, x="total_bill",color=my_selection)
 st.plotly_chart(fig)
