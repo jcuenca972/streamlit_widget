@@ -88,5 +88,7 @@ st.plotly_chart(fig)
 
 st.markdown("----")
 st.subheader("Scatter plot")
-fig = px.scatter(data_frame=tips_data, x="total_bill", y="tip")
+my_selection = st.selectbox("Select the category to color", ("sex", "smoker", "day", "time"))
+st.write(my_selection)
+fig = px.scatter(data_frame=tips_data, x="total_bill", y="tip", color=my_selection)
 st.plotly_chart(fig)
