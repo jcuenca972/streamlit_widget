@@ -79,4 +79,6 @@ st.area_chart(my_data)
 st.markdown("----")
 st.header("Load a real dataframe")
 tips_data = pd.read_csv("./data/tips.csv")
-
+st.header("Distribution Chart")
+fig = px.histogram(data_frame=tips_data, x="total_bill")
+st.plotly_chart(fig)
