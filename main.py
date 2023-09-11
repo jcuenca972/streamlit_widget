@@ -68,7 +68,7 @@ if save_button:
     else:
         st.error("Please select a file to upload")
 
-folder_path = '/path/to/folder'
+folder_path = './uploads'
 files = [f for f in os.listdir(folder_path) if os.path.isfile(os.path.join(folder_path, f))]
 st.subheader("Files:")
 for file in files:
